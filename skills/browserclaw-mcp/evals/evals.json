@@ -1,0 +1,23 @@
+{
+  "skill_name": "browserclaw-mcp",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Using the BrowserClaw browser, open https://news.ycombinator.com and give me the titles and links (URLs) of the top 5 stories on the front page. Return them as a numbered list.",
+      "expected_output": "A numbered list of the top 5 HN front-page story titles, each with its destination URL, obtained by driving the live browser (not by fetching HTML).",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "There's a login practice page at https://the-internet.herokuapp.com/login. Use the BrowserClaw browser to log in with username tomsmith and password SuperSecretPassword! and then tell me the exact green confirmation message that appears after a successful login.",
+      "expected_output": "The confirmation flash message shown after logging in, which contains 'You logged into a secure area!', obtained by filling the form and submitting it in the live browser.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Go to https://quotes.toscrape.com with the BrowserClaw browser and collect the first 10 quotes on the site along with each quote's author. Give me the result as a clean list of quote + author.",
+      "expected_output": "A list of 10 quotes each paired with the correct author, gathered from the live site (may require reading past the first page of results).",
+      "files": []
+    }
+  ]
+}

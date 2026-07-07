@@ -21,15 +21,9 @@ cp -r skills/skills/<skill-name> ~/.claude/skills/
 
 ## Available skills
 
-_None yet — this repo is a fresh scaffold. See [CONTRIBUTING.md](CONTRIBUTING.md) to add the first one._
-
-<!--
-When you add a skill, list it here:
-
 | Skill | What it does |
 | --- | --- |
-| [`example-skill`](skills/example-skill) | One-line summary. |
--->
+| [`browserclaw-mcp`](skills/browserclaw-mcp) | Teaches an agent to drive a real browser through the BrowserClaw MCP — the read-vs-interact split, the snapshot→act→diff loop, when to fall back to `evaluate`, and common recipes for scraping, forms, and multi-step flows. |
 
 ## Skill anatomy
 
