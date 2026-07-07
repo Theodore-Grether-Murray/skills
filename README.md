@@ -24,6 +24,7 @@ cp -r skills/skills/<skill-name> ~/.claude/skills/
 | Skill | What it does |
 | --- | --- |
 | [`browserclaw-mcp`](skills/browserclaw-mcp) | Teaches an agent to drive a real browser through the BrowserClaw MCP — the read-vs-interact split, the snapshot→act→diff loop, when to fall back to `evaluate`, and common recipes for scraping, forms, and multi-step flows. |
+| [`x-intelligence-scrape`](skills/x-intelligence-scrape) | Turns X (Twitter) into an actionable briefing by scraping the live site via BrowserClaw — what's happening, where to engage, and what to tweet. Sources only from the For You feed + Explore (never Following), filters promoted ads, and enforces 12h freshness. Ships proven scrape payloads. |
 
 ## Skill anatomy
 

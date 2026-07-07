@@ -1,0 +1,33 @@
+{
+  "skill_name": "x-intelligence-scrape",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Give me an intelligence briefing on X right now: what's happening/trending, which tweets I should reply to, and what I should tweet about. Use the live site.",
+      "expected_output": "A three-section briefing (what's happening / where to engage / what to tweet) sourced from the For You feed + Explore (News/Trending), with fresh (<=12h prioritized, older flagged) items, real engagement numbers, and tweet links. Following feed not used.",
+      "files": [],
+      "assertions": [
+        "Contains all three sections: what's happening, where to engage, what to tweet",
+        "Sources from For You + Explore and excludes the Following feed",
+        "Handles freshness (ages present; older-than-12h items flagged)",
+        "Gives concrete tweet links for engagement targets",
+        "Actively excludes promoted ads: explicitly identifies and drops promoted/brand (null-timestamp) tweets, and surfaces no promoted-brand account as a content item",
+        "Reports real engagement metrics (views/replies/likes)"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "scrape twitter for me \u2014 what's blowing up right now and where could I jump into the conversation?",
+      "expected_output": "A briefing of currently-trending/high-engagement X content plus concrete engagement targets (tweets worth replying to), sourced from For You + Explore, fresh within ~12h, with links. Not sourced from the Following timeline.",
+      "files": [],
+      "assertions": [
+        "Contains all three sections: what's happening, where to engage, what to tweet",
+        "Sources from For You + Explore and excludes the Following feed",
+        "Handles freshness (ages present; older-than-12h items flagged)",
+        "Gives concrete tweet links for engagement targets",
+        "Actively excludes promoted ads: explicitly identifies and drops promoted/brand (null-timestamp) tweets, and surfaces no promoted-brand account as a content item",
+        "Reports real engagement metrics (views/replies/likes)"
+      ]
+    }
+  ]
+}
