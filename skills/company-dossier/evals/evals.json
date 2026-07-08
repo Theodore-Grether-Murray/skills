@@ -1,0 +1,47 @@
+{
+  "skill_name": "company-dossier",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Make me a dossier on Retool \u2014 what they do, funding, team, and recent news. I'm sizing them up competitively.",
+      "expected_output": "A one-pager dossier synthesized from live sources (site + LinkedIn + funding/news), with real links, covering what they do, product surface, funding & traction, team, recent news, and a competitive-intel 'why it matters'.",
+      "files": [],
+      "assertions": [
+        "Covers the core dossier sections: what they do, product surface, funding, team, recent news",
+        "Synthesizes from 2+ distinct live source domains (company site + LinkedIn + a funding/news source), not one page",
+        "Includes real clickable links (>=3 markdown links)",
+        "Reports concrete funding data (amount/round/valuation/investors), or explicitly says not disclosed",
+        "Names founders/leadership (team pulled via LinkedIn or the company site)",
+        "Includes a tailored 'why it matters' with a competitive-intel angle"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "I've got a call with someone from https://www.vanta.com \u2014 research the company and give me a one-pager before the call.",
+      "expected_output": "A dossier resolved from the URL, covering product/what they do, funding, team via LinkedIn, recent news, with links and a lead-prep 'why it matters' tailored to an upcoming call.",
+      "files": [],
+      "assertions": [
+        "Covers the core dossier sections: what they do, product surface, funding, team, recent news",
+        "Synthesizes from 2+ distinct live source domains (company site + LinkedIn + a funding/news source), not one page",
+        "Includes real clickable links (>=3 markdown links)",
+        "Reports concrete funding data (amount/round/valuation/investors), or explicitly says not disclosed",
+        "Names founders/leadership (team pulled via LinkedIn or the company site)",
+        "Includes a tailored 'why it matters' geared to prepping for an upcoming call/meeting"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "look into Brex for me, thinking about whether to apply there",
+      "expected_output": "A dossier on Brex from live sources with links, covering the company, funding, team/culture, recent news, and a hiring-diligence 'why it matters' angle.",
+      "files": [],
+      "assertions": [
+        "Covers the core dossier sections: what they do, product surface, funding, team, recent news",
+        "Synthesizes from 2+ distinct live source domains (company site + LinkedIn + a funding/news source), not one page",
+        "Includes real clickable links (>=3 markdown links)",
+        "Reports concrete funding data (amount/round/valuation/investors), or explicitly says not disclosed",
+        "Names founders/leadership (team pulled via LinkedIn or the company site)",
+        "Includes a tailored 'why it matters' with a hiring/should-I-apply angle"
+      ]
+    }
+  ]
+}
