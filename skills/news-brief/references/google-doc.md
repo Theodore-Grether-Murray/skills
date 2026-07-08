@@ -36,11 +36,15 @@ Then `act(kind:"click_at", x, y)`.
 
 A flat wall of same-size text with a URL stacked under every line reads as cluttered — that's the #1 complaint. Fix it with Google Docs' built-in **heading styles**, applied via keyboard shortcuts *as you type*. This also populates the Doc's **outline panel** (left sidebar), which makes the whole thing skimmable at a glance.
 
-The pattern: apply a paragraph style with a shortcut → type that paragraph → Enter (Docs auto-returns to normal body text after a heading). Build section by section rather than in one giant `type()`:
+The pattern: apply a heading style → type the heading line → **force the body back to Normal** → type the body. Build section by section rather than in one giant `type()`:
 
-- **Title → Heading 1:** `act(kind:"press", key:"Meta+Alt+1")` (Mac; `Control+Alt+1` elsewhere), then `act(kind:"type", ...)` the title line + a one-line dek (the dek lands as normal text after the title's newline).
-- **Each section header → Heading 2:** `act(kind:"press", key:"Meta+Alt+2")`, then `type` the header line followed by that section's item lines. Headings carry their own spacing, so you **don't** need blank lines between sections.
-- Repeat the `Meta+Alt+2` + `type` pair for each section. A confirmation that the style took: the `act` result's `afterUrl` gains a `#heading=…` anchor.
+- **Title → Heading 1:** `act(kind:"press", key:"Meta+Alt+1")` (Mac; `Control+Alt+1` elsewhere) → `type` the title line + a newline → `act(kind:"press", key:"Meta+Alt+0")` (Normal text) → `type` the one-line dek.
+- **Each section header → Heading 2:** `act(kind:"press", key:"Meta+Alt+2")` → `type` the header line + a newline → `act(kind:"press", key:"Meta+Alt+0")` → `type` that section's item lines. Headings carry their own spacing, so you **don't** need blank lines between sections.
+- Repeat that four-step pattern for each section. A confirmation the heading took: the `act` result's `afterUrl` gains a `#heading=…` anchor.
+
+> **Why the explicit `Meta+Alt+0` (Normal) after every heading:** Docs is *supposed* to auto-revert to body text on the next paragraph, but in practice it's flaky — skip the guard and heading styling bleeds onto body lines, polluting the outline (you'll see body sentences show up as headings in the left panel). Forcing Normal before typing the body prevents it.
+>
+> **If a heading shortcut returns `changed:false` with no `#heading` anchor,** focus drifted out of the editor. Recover: `click_at` a point inside the doc body, then `act(kind:"press", key:"Meta+Down")` to jump the cursor to the end of the document, then continue. Don't keep firing the shortcut blind.
 
 **Item formatting — keep it lean:**
 - **One concise line per story, with its single source link right after it.** URLs auto-link when followed by a newline. Keep it to **one primary link per item** — stacking multiple URLs per story is exactly what makes these Docs feel heavy.
