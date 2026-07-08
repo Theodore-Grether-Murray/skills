@@ -1,0 +1,47 @@
+{
+  "skill_name": "meeting-prep",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I've got a meeting with Eric Glyman, CEO of Ramp \u2014 prep me before the call.",
+      "expected_output": "A one-page prep sheet on Eric Glyman from live sources (LinkedIn + Ramp company + web), covering who he is, Ramp's latest funding/news, his track record, recent activity, how to connect, and smart questions \u2014 with real links.",
+      "files": [],
+      "assertions": [
+        "Covers all prep-sheet sections: who they are, their company, track record/background, recent activity, how to connect (talking points), questions to ask",
+        "Synthesizes from 2+ distinct professional source domains (LinkedIn + company or web), not one page",
+        "Includes real clickable links (>=3 markdown links)",
+        "Provides tailored talking points AND specific questions to ask the person",
+        "Uses only professional sources \u2014 cites no people-search/data-broker domains",
+        "Correctly identifies/names the person and their current role"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "make me a prep sheet on Nadeem Nathoo before I meet him",
+      "expected_output": "A prep sheet on the correct Nadeem Nathoo (disambiguated), covering his role/company, background/track record, recent activity, how to connect, and questions, with links \u2014 using only professional sources.",
+      "files": [],
+      "assertions": [
+        "Covers all prep-sheet sections: who they are, their company, track record/background, recent activity, how to connect (talking points), questions to ask",
+        "Synthesizes from 2+ distinct professional source domains (LinkedIn + company or web), not one page",
+        "Includes real clickable links (>=3 markdown links)",
+        "Provides tailored talking points AND specific questions to ask the person",
+        "Uses only professional sources \u2014 cites no people-search/data-broker domains",
+        "Correctly identifies/names the person and their current role"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "prep me for a call with this person: https://www.linkedin.com/in/theotarr/ \u2014 what should I know?",
+      "expected_output": "A prep sheet resolved from the LinkedIn URL (Theo Tarr), covering who he is, his company, what he's built, recent activity, talking points, and questions, with links.",
+      "files": [],
+      "assertions": [
+        "Covers all prep-sheet sections: who they are, their company, track record/background, recent activity, how to connect (talking points), questions to ask",
+        "Synthesizes from 2+ distinct professional source domains (LinkedIn + company or web), not one page",
+        "Includes real clickable links (>=3 markdown links)",
+        "Provides tailored talking points AND specific questions to ask the person",
+        "Uses only professional sources \u2014 cites no people-search/data-broker domains",
+        "Correctly identifies/names the person and their current role"
+      ]
+    }
+  ]
+}
