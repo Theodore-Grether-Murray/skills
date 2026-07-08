@@ -18,21 +18,22 @@ The default deliverable is **the brief in chat + an auto-linked Google Doc opene
 
 The brief **always appears in chat**, so the user gets the content immediately even if the Doc step hits trouble. If you truly can't build the Doc (not signed in, or a non-interactive run where creating Drive files isn't appropriate), fall back to writing a **Markdown file with `[text](url)` links** and say so — the content is the point, the Doc is the nice-to-have container.
 
-## Step 1 — Choose sources
+## Step 1 — Choose sources that fit the topic
 
-**Reliable core (always, unless the user names their own):** these scrape cleanly and cover the world well —
-- **AP** — `https://apnews.com/`
-- **BBC World** — `https://www.bbc.com/news/world`
-- **Al Jazeera** — `https://www.aljazeera.com/news/`
+**Match the sources to the request** — don't reach for a fixed default set regardless of subject. Then **cross-check 2–3 that converge**: convergence is what makes the brief trustworthy (better than ten sources that don't agree). Two selection rules:
 
-Three sources that *converge* is a strong, cross-checked signal — better than ten that don't. Add more only for coverage or focus:
+1. **Pick the outlets that actually cover *this* topic best.**
+   - **General world news →** broad, multi-perspective wires/broadcasters. A proven, reliable-to-scrape default trio is **AP** (`https://apnews.com/`), **BBC World** (`https://www.bbc.com/news/world`), and **Al Jazeera** (`https://www.aljazeera.com/news/`) — a US-wire / UK-European / Middle-East-&-Global-South spread that's good for cross-checking. Use it as a *starting point for general news, not a mandate.*
+   - **A focused topic →** lead with the publications that own that beat, and don't feel obliged to include the general trio:
+     - Tech/AI → TechCrunch, The Verge, Ars Technica, Hacker News.
+     - Markets/economy → a markets-focused outlet, AP's financial-markets hub, Al Jazeera economy.
+     - A region/country → that region's leading outlet(s) + strong local sources.
+     - A specific war, election, company, sport, science beat → whoever covers it best.
+   - **If the user names their own sources, use theirs.**
 
-**Topic sources — add when the request has a focus:**
-- Markets/economy → e.g. `https://apnews.com/hub/financial-markets`, `https://www.aljazeera.com/economy/`
-- Tech/AI → e.g. `https://techcrunch.com/`, `https://www.theverge.com/`
-- A region or country → that outlet's regional section, or a strong local source.
+2. **Prefer sources you can actually read headlessly.** In testing, AP / BBC / Al Jazeera / TechCrunch / The Verge / Ars Technica / Hacker News all scrape cleanly via `evaluate`. **Google News** (`news.google.com`, shadow-DOM cards) and **Reuters** (`reuters.com`, heavy SPA) usually return nothing headless — open them only as a bonus and move on if empty. If a chosen source won't yield, swap in another that covers the same beat rather than forcing it.
 
-**Known-flaky (use as a bonus, never rely on):** Google News (`news.google.com`) renders headlines in shadow DOM that resists `evaluate`; Reuters (`reuters.com`) is a heavy SPA that often yields nothing. If you open them and they come back empty, move on — the core three are enough. Say in the output which sources actually contributed.
+Always say in the output which sources actually contributed.
 
 ## Step 2 — Open sources in parallel tabs
 

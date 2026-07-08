@@ -9,12 +9,21 @@ Paste these into `mcp__BrowserClaw__evaluate` against each source's `page` id. T
 - [Flaky sources](#flaky-sources)
 - [Habits](#habits)
 
-## Core sources & selectors
-| Source | URL | Article link pattern |
+## Reliable-to-scrape sources & selectors
+
+Source choice is **topic-driven** (see SKILL.md Step 1) — use whatever outlets fit the request. The table below is just a set of *known-good examples* (verified to scrape cleanly via `evaluate`) with their article-link patterns, so you have ready selectors for common ones. For any other outlet, use the [generic link-map extractor](#generic-link-map-extractor) and set `pat` to that site's article-URL shape.
+
+| Source (example) | URL | Article link pattern |
 |---|---|---|
 | AP | `https://apnews.com/` | `a[href*="apnews.com/article"]` |
 | BBC World | `https://www.bbc.com/news/world` | `a[href*="bbc.com/news"]` (articles under `/news/articles/…`) |
 | Al Jazeera | `https://www.aljazeera.com/news/` | `a[href*="aljazeera.com/news/"]` / `/economy/` / `/sports/` |
+| TechCrunch | `https://techcrunch.com/` | `a[href*="techcrunch.com/2026/"]` (dated article paths) |
+| The Verge | `https://www.theverge.com/` | `a[href*="theverge.com/"]` (long slugs) |
+| Ars Technica | `https://arstechnica.com/` | `a[href*="arstechnica.com/"]` (section/dated paths) |
+| Hacker News | `https://news.ycombinator.com/` | `a.titleline > a` (external story links) |
+
+These are examples, not a required set — pick the best outlets for the topic.
 
 ## Generic link-map extractor
 Works on most news homepages — collects `{headline, url}` for links whose text is long enough to be a headline and whose href matches the source's article pattern. Change the `pat` regex per source.

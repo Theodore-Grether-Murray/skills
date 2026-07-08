@@ -25,7 +25,7 @@ cp -r skills/skills/<skill-name> ~/.claude/skills/
 | --- | --- |
 | [`browserclaw-mcp`](skills/browserclaw-mcp) | Teaches an agent to drive a real browser through the BrowserClaw MCP — the read-vs-interact split, the snapshot→act→diff loop, when to fall back to `evaluate`, and common recipes for scraping, forms, and multi-step flows. |
 | [`x-intelligence-scrape`](skills/x-intelligence-scrape) | Turns X (Twitter) into an actionable briefing by scraping the live site via BrowserClaw — what's happening, where to engage, and what to tweet. Sources only from the For You feed + Explore (never Following), filters promoted ads, and enforces 12h freshness. Ships proven scrape payloads. |
-| [`news-brief`](skills/news-brief) | Briefs you on what's happening in the world by scraping live news (AP, BBC, Al Jazeera + topic sources) via BrowserClaw in parallel tabs, cross-checking, and synthesizing a themed brief with source links and a tailored "why it matters to you." Delivers the brief in chat plus an auto-linked Google Doc opened as a tab. Ships source selectors + a proven Google-Doc-building recipe. |
+| [`news-brief`](skills/news-brief) | Briefs you on what's happening in the world — or any specific topic — by scraping live news via BrowserClaw in parallel tabs. Picks reputable sources that fit the topic (a general-news default trio, or beat outlets for tech / markets / a region), cross-checks them, and synthesizes a themed brief with source links and a tailored "why it matters to you." Delivers the brief in chat plus an auto-linked Google Doc opened as a tab. Ships source selectors + a proven Google-Doc-building recipe. |
 
 ## Skill anatomy
 

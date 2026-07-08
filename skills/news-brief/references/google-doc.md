@@ -6,6 +6,8 @@ Google Docs is a **canvas-based editor**: it renders text to a canvas and captur
 
 This recipe is the proven path. Follow it in order.
 
+> Source choice is topic-driven (see SKILL.md Step 1) — this recipe is about *building the Doc* once you've synthesized the brief, whatever sources it came from.
+
 ## Prerequisite
 The user must be signed into Google in the BrowserClaw browser (a new doc opens straight into the editor; if it redirects to `accounts.google.com`, stop and tell them to sign in — don't try to authenticate for them).
 
