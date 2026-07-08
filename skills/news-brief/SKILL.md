@@ -59,7 +59,7 @@ Don't relay one site's front page. Read across the sources and build a *briefing
 
 **Always:** present the full brief in chat (the content is what the user actually reads first).
 
-**Primary artifact — the Google Doc:** build it and open it as a browser tab. Follow **`references/google-doc.md`** exactly — it's a fiddly, canvas-based editor and that file has the proven recipe (create via `docs.new`, click into the canvas, type with real keystrokes so URLs auto-link, put each URL on its own line, set the title, clean up any stray text, verify with a screenshot). Report the doc URL, and note the Doc is private to the user's Drive by default.
+**Primary artifact — the Google Doc:** build it and open it as a browser tab. Follow **`references/google-doc.md`** exactly — it's a fiddly, canvas-based editor and that file has the proven recipe. The key to a clean (not cluttered) Doc: **apply real Heading 1/2 styles for hierarchy** (via keyboard shortcuts as you type — this also populates the outline panel), keep **one concise line per story with a single inline source link**, set the title via the title input, verify with a screenshot. Report the doc URL, and note the Doc is private to the user's Drive by default.
 
 **Fallback:** if the Doc can't be created (Google sign-in bounce, or a non-interactive run), write a Markdown file (`world-news-brief.md` or `<topic>-news-brief.md`) with `[headline](url)` links, optionally open it as a `file://` tab, and tell the user the Doc wasn't created and why.
 

@@ -30,17 +30,23 @@ return { x:Math.round(r.left+r.width/2), y:Math.round(r.top+80) };
 ```
 Then `act(kind:"click_at", x, y)`.
 
-## 3. Type the body — put every URL on its own line
-Send the whole brief as one `act(kind:"type", text:"…")`. Formatting rules that make it come out clean:
-- **Newlines become paragraphs.** Write one idea per line; a blank line = an empty paragraph (fine for spacing).
-- **URLs auto-link when followed by Enter/space** — so put each link on **its own line**, directly under the headline it belongs to. Don't inline `[text](url)` markdown; Docs won't parse it. Do:
-  ```
-  US launches new strikes on Iran after the ceasefire collapsed.
-  https://apnews.com/article/…
-  ```
-- Use plain SECTION HEADERS in caps (Docs won't apply Markdown `#` headings from typed text). Keep it readable, not styled.
-- Avoid emoji if you want it clean; they type fine but look odd next to auto-links.
-- **Avoid manual "1) 2)" numbering** — Docs' autolist turns `1)` into a list and can double it ("2) 2)"). Use plain dashes or prose instead.
+## 3. Build the body with real heading hierarchy (this is what stops it feeling cluttered)
+
+A flat wall of same-size text with a URL stacked under every line reads as cluttered — that's the #1 complaint. Fix it with Google Docs' built-in **heading styles**, applied via keyboard shortcuts *as you type*. This also populates the Doc's **outline panel** (left sidebar), which makes the whole thing skimmable at a glance.
+
+The pattern: apply a paragraph style with a shortcut → type that paragraph → Enter (Docs auto-returns to normal body text after a heading). Build section by section rather than in one giant `type()`:
+
+- **Title → Heading 1:** `act(kind:"press", key:"Meta+Alt+1")` (Mac; `Control+Alt+1` elsewhere), then `act(kind:"type", ...)` the title line + a one-line dek (the dek lands as normal text after the title's newline).
+- **Each section header → Heading 2:** `act(kind:"press", key:"Meta+Alt+2")`, then `type` the header line followed by that section's item lines. Headings carry their own spacing, so you **don't** need blank lines between sections.
+- Repeat the `Meta+Alt+2` + `type` pair for each section. A confirmation that the style took: the `act` result's `afterUrl` gains a `#heading=…` anchor.
+
+**Item formatting — keep it lean:**
+- **One concise line per story, with its single source link right after it.** URLs auto-link when followed by a newline. Keep it to **one primary link per item** — stacking multiple URLs per story is exactly what makes these Docs feel heavy.
+- Prefer one sentence per item; push detail into the "Why it matters" section.
+- **Don't hand-number** ("1) 2)") — Docs' autolist turns `1)` into a list and can double it ("2) 2)"). Use prose, or a real bulleted list via `Meta+Shift+8`.
+- Skip emoji in the Doc (they look busy next to auto-links); the chat brief can keep them.
+
+**On hiding URLs behind labels:** it's cleaner but each label needs the text selected + `Meta+k` (link dialog) + paste URL — roughly 4 actions *per link*, which doesn't scale across ~10 items. So **inline auto-linked URLs (one per line) are the reliable default.** If the user specifically wants clean labels, do the `Meta+k` flow for just the handful of most important links, not all of them.
 
 ## 4. Set the title (careful — this is where it goes wrong)
 Docs **auto-fills the title from the first typed line** after a moment, so often you don't need to. If you want a custom title, do NOT click near the top-left and type — that click frequently misses the title field and your text lands in the body. Instead focus the real title input and type into it:
