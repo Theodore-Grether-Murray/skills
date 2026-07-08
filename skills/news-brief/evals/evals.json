@@ -1,0 +1,44 @@
+{
+  "skill_name": "news-brief",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Using BrowserClaw, catch me up on what's happening in the world right now \u2014 a brief on everything I should be aware of. Save it as a markdown file with links.",
+      "expected_output": "A themed, cross-checked world brief synthesized from multiple live sources (not one front page), with real article links, a 'why it matters to you' section, saved as a Markdown file with [text](url) links.",
+      "files": [],
+      "assertions": [
+        "Synthesizes from 2+ distinct live news sources (multiple domains linked), not a single front page",
+        "Includes real clickable article links (>=3 markdown links to news domains)",
+        "Organized into multiple themed sections",
+        "Saved as a non-trivial Markdown file (brief.md)",
+        "Includes a tailored 'why it matters to you' / takeaways section"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "what's going on in tech and AI news today? check live sources with the browser and write me a brief with clickable links.",
+      "expected_output": "A tech/AI-focused brief that added topic-specific sources, synthesized across them, with clickable article links, saved as Markdown.",
+      "files": [],
+      "assertions": [
+        "Synthesizes from 2+ distinct live news sources (multiple domains linked), not a single front page",
+        "Includes real clickable article links (>=3 markdown links to news domains)",
+        "Organized into multiple themed sections",
+        "Saved as a non-trivial Markdown file (brief.md)",
+        "Leads with/focuses on tech & AI and pulls in tech-specific sources beyond the core"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "brief me on today's headlines using the browser",
+      "expected_output": "A general world brief from live sources with links, sensible defaults (writes the markdown file; no Google Doc created without being asked).",
+      "files": [],
+      "assertions": [
+        "Synthesizes from 2+ distinct live news sources (multiple domains linked), not a single front page",
+        "Includes real clickable article links (>=3 markdown links to news domains)",
+        "Organized into multiple themed sections",
+        "Saved as a non-trivial Markdown file (brief.md)",
+        "Includes a tailored 'why it matters to you' / takeaways section"
+      ]
+    }
+  ]
+}
